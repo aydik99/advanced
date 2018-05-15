@@ -1,14 +1,13 @@
 <?php
 return [
-    'id' => 'app-common-tests',
-    'basePath' => dirname(__DIR__),
+    'aliases' => [
+        '@bower' => '@vendor/bower-asset',
+        '@npm'   => '@vendor/npm-asset',
+    ],
+    'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'components' => [
-        'user' => [
-            'class' => 'yii\web\User',
-            'identityClass' => 'common\models\User',
-        ],
-        'request' => [
-            'cookieValidationKey' => 'test',
+        'cache' => [
+            'class' => 'yii\caching\FileCache',
         ],
     ],
 ];
