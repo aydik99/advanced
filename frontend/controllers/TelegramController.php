@@ -5,7 +5,7 @@ use yii\web\Controller;
 
 class TelegramController extends Controller
 {
-    public $chatId = 290628710;
+    public $chatId = '';
     public function actionIndex()
     {
         $bot = \Yii::$app->bot;
