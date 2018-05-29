@@ -11,10 +11,15 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
+    // 'enableSession' => false,
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-frontend',
+            'parsers' => [
+            'application/json' => \yii\web\JsonParser::class
         ],
+        ],
+        
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
@@ -36,7 +41,8 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
+        
+     /*
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
@@ -44,6 +50,7 @@ return [
             ],
         ],
         */
+        
     ],
     'params' => $params,
 ];
